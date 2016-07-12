@@ -20,8 +20,6 @@ const func = () => {
     var status = $($('.jumbotron h2 font')[0]).html();
 
     if (status !== lastValue) {
-      exec('say ' + status);
-
       console.log(`${moment().format('h:mm:ss a')} - ${status}`);
       lastValue = status;
     }
