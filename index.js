@@ -1,19 +1,20 @@
+/*jshint esversion: 6 */
+/*jshint node: true */
+/*jslint node: true */
+'use strict';
+
 //dependencies
-var fs = require('fs');
-var request = require('request');
-var cheerio = require('cheerio');
-var shelljs = require('shelljs/global');
-var moment  = require('moment');
+const fs = require('fs');
+const request = require('request');
+const cheerio = require('cheerio');
+const shelljs = require('shelljs/global');
+const moment  = require('moment');
 
-var url = 'http://cmmcd.com/PokemonGo/';
-var lastValue = null;
+const url = 'http://cmmcd.com/PokemonGo/';
+let lastValue = null;
 
-console.log('Pokemon GO - Server Status');
-func();
-setInterval(func, 20 * 1000);
-
-function func() {
-  request(url, function (err, res, html) {
+const func = () => {
+  request(url, (err, res, html) => {
     if (err) throw err;
     var $ = cheerio.load(html);
     var status = $($('.jumbotron h2 font')[0]).html();
@@ -21,8 +22,12 @@ function func() {
     if (status !== lastValue) {
       exec('say ' + status);
 
-      console.log(moment().format('h:mm:ss a') + ' - ' + status);
+      console.log(`${moment().format('h:mm:ss a')} - ${status}`);
       lastValue = status;
     }
   });
-}
+};
+
+console.log('Pokemon GO - Server Status');
+func();
+setInterval(func, 20 * 1000);
