@@ -13,7 +13,7 @@ let lastValue = null;
 
 const verify = () => {
   request(url, (err, res, html) => {
-    if (err) throw err;
+    if (err) return console.log('Status server offline, hold on!')
     var $ = cheerio.load(html);
     var status = $($('.jumbotron h2 font')[0]).html();
 
