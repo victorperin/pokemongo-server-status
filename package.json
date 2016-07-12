@@ -1,0 +1,24 @@
+{
+  "name": "pokemongo-status",
+  "version": "0.0.1",
+  "description": "A fast way to check if pokemon go is online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorperin/pokemongo-server-status.git"
+  },
+  "author": "Victor Perin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorperin/pokemongo-server-status/issues"
+  },
+  "homepage": "https://github.com/victorperin/pokemongo-server-status#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "moment": "^2.14.1",
+    "request": "^2.73.0"
+  }
+}
