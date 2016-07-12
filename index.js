@@ -13,7 +13,7 @@ const moment  = require('moment');
 const url = 'http://cmmcd.com/PokemonGo/';
 let lastValue = null;
 
-const func = () => {
+const verify = () => {
   request(url, (err, res, html) => {
     if (err) throw err;
     var $ = cheerio.load(html);
@@ -27,5 +27,5 @@ const func = () => {
 };
 
 console.log('Pokemon GO - Server Status');
-func();
-setInterval(func, 20 * 1000);
+verify();
+setInterval(verify, 20 * 1000);
