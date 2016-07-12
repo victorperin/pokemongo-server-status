@@ -4,10 +4,8 @@
 'use strict';
 
 //dependencies
-const fs = require('fs');
 const request = require('request');
 const cheerio = require('cheerio');
-const shelljs = require('shelljs/global');
 const moment  = require('moment');
 
 const url = 'http://cmmcd.com/PokemonGo/';
