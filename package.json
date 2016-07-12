@@ -4,6 +4,7 @@
   "description": "A fast way to check if pokemon go is online",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -12,6 +13,10 @@
   },
   "author": "Victor Perin",
   "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "pokemongo-status": "index.js"
+  },
   "bugs": {
     "url": "https://github.com/victorperin/pokemongo-server-status/issues"
   },
